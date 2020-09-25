@@ -1,10 +1,18 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { Button, Grid, Menu } from 'semantic-ui-react'
+
+import shirtImg from '../../images/shirt.png'
 
 class CanvasContainer extends Component {
     state = {
         showShirt: true,
         showPritable: true
+    }
+
+    handleShowShirt = () => {
+        this.setState({
+            showShirt: !this.state.showShirt
+        })
     }
 
     render() {
@@ -14,8 +22,8 @@ class CanvasContainer extends Component {
                     <Grid.Row centered={true}>
                         <Menu>
                             <Menu.Item>
-                                <Button>
-                                    Show Shirt
+                                <Button onClick={this.handleShowShirt}>
+                                    {this.state.showShirt ? "Hide Shirt" : "ShowShirt"}
                                 </Button>
                             </Menu.Item>
                             <Menu.Item>
@@ -30,9 +38,13 @@ class CanvasContainer extends Component {
                             </Menu.Item>
                         </Menu>
                     </Grid.Row>
-                    <Grid.Row></Grid.Row>
+                    <Grid.Row>
+                        {this.state.showShirt ? 
+                            <img src={shirtImg} alt=""/> : <h1>No Shirt</h1>
+                        }
+                        
+                    </Grid.Row>
                 </Grid>
-                {/* {this.state.showShirt ? <h1>Shirt</h1> : <h1>No Shirt</h1>} */}
             </div>
         )
     }
