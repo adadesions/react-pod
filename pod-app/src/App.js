@@ -4,7 +4,7 @@ import 'semantic-ui-css/semantic.min.css'
 
 import { Grid } from 'semantic-ui-react'
 import MenuContrainer from './components/MenuBar/MenuContainer';
-
+import CanvasContainer from './components/Canvas/CanvasContainer';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
           </Grid.Column>
 
           <Grid.Column width={8}>
-            b
+            <CanvasContainer></CanvasContainer>
           </Grid.Column>
           <Grid.Column width={4}>
             c
